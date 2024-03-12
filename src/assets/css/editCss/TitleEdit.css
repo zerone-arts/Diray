@@ -1,0 +1,55 @@
+.title-edit-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+  color: white;
+}
+
+.title-edit-container input {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  color: white;
+  padding-bottom: 5px;
+  border-bottom: 0.5px solid white;
+  text-transform: uppercase;
+}
+
+.title-edit-container input:focus {
+  outline: none;
+}
+
+.title-eidt-inputWidth {
+  position: absolute;
+  color: black;
+  position: absolute;
+  background-color: white;
+  top: 100px;
+  pointer-events: none;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.title-edit-select {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 50%;
+  top: 70%;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+}
+.title-edit-select:active {
+  border-width: 8px;
+}

@@ -1,0 +1,129 @@
+.login-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+
+.login-loginBox {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-loginBox-title {
+  width: 100%;
+  text-align: center;
+  font-family: "Parisienne", cursive;
+  color: rgba(113, 113, 113, 1);
+  margin-bottom: 20px;
+}
+.login-loginBox-designBox {
+  position: relative;
+  width: 100%;
+  height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.login-loginBox-designBox-color1Box {
+  position: relative;
+  width: 130px;
+  height: 100%;
+}
+.login-loginBox-designBox-color2Box {
+  position: relative;
+  width: 130px;
+  height: 100%;
+}
+.login-loginBox-designBox-colorBox-color {
+  width: 130px;
+  height: 130px;
+}
+.login-loginBox-designBox-colorBox-hex {
+  display: inline-block;
+  position: absolute;
+  width: 65px;
+  left: 0;
+  height: 70px;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+.login-loginBox-designBox-colorBox-text {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: 65px;
+  font-size: 9px;
+  text-align: right;
+}
+
+.login-loginBox-inputBox {
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+.login-loginBox-inputBox-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  transition: 1s;
+  font-size: 11px;
+
+  border-radius: 15px;
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+}
+.login-loginBox-inputBox-btn p {
+  transform: scale(0.9);
+  transition: 1s;
+  color: rgba(0, 0, 0, 0.3);
+}
+.login-loginBox-inputBox-line {
+  position: absolute;
+  content: "";
+  width: 0.5px;
+  height: 100%;
+  top: 0%;
+  left: 12%;
+  background-color: black;
+}
+.login-loginBox-inputBox-ball {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  top: 5%;
+  left: calc(12% - 2.5px);
+  background-color: black;
+  transition: 1s;
+}
+
+.login-loginBox-inputBox:hover
+  .login-loginBox-inputBox-btn
+  .login-loginBox-inputBox-ball {
+  top: 75%;
+}
+.login-loginBox-inputBox:hover .login-loginBox-inputBox-btn p {
+  transform: scale(1);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+}

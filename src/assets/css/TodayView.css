@@ -1,0 +1,553 @@
+.todayView-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 0.5s;
+  opacity: 0;
+  pointer-events: none;
+  font-family: "Poppins", sans-serif;
+}
+.todayView-container.active {
+  background-color: rgba(0, 0, 0, 0.8);
+  pointer-events: all;
+  opacity: 1;
+}
+
+.todayView-wrapper {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+
+  transition: 0.5s;
+}
+.todayView-wrapper.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.square-Box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.5px solid rgba(255, 255, 255, 0);
+  transition: 0.5s;
+  /* overflow: hidden; */
+}
+
+.square-Box:hover {
+  border: 0.5px solid rgba(255, 255, 255, 1);
+}
+.square-Box-notImgBox {
+  width: 100%;
+  height: 100%;
+}
+
+.square-Box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+.square-Box.center {
+  width: 280px;
+  height: 280px;
+}
+
+.square-Box.row {
+  width: 320px;
+  height: 230px;
+}
+
+.square-Box.column {
+  width: 250px;
+  height: 300px;
+}
+
+.squre-Box-textBox {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.squre-Box-textBox-textWrapper {
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.squre-Box-textBox-textWrapper.text:hover {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.squre-Box-textBox-move {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: -7.5px;
+  top: -7.5px;
+  transition: 0.5s;
+  opacity: 0;
+}
+.squre-Box-textBox-textWrapper.text:hover .squre-Box-textBox-move {
+  opacity: 1;
+}
+
+.squre-Box-textBox-move ion-icon {
+  position: absolute;
+  font-size: 15px;
+  text-shadow: 1px 1px 1px black;
+  transform: scale(1);
+  transition: 0.5s;
+}
+
+.squre-Box-textBox-text {
+  height: 20px;
+  position: absolute;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.squre-Box-textBox-text.text {
+  pointer-events: all;
+  border-bottom: 0.5px solid white;
+}
+
+.squre-Box-textBox-text:focus {
+  outline: none;
+  border-bottom: 0.5px solid white;
+}
+.todayView-textWdith {
+  opacity: 0;
+  border: 1px solid red;
+  pointer-events: none;
+  width: 100%;
+}
+
+.todayView-BtnBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 30px;
+  background-color: transparent;
+  color: white;
+  opacity: 1;
+  border: none;
+  transition: 1s;
+  letter-spacing: 1px;
+  font-weight: 100;
+}
+
+.todayView-BtnBox.editActive {
+  opacity: 1;
+}
+
+.todayView-BtnBox.center {
+  transform: translate(calc(-50% + 140px - 50px), calc(-50% - 140px - 15px));
+}
+.todayView-BtnBox.row {
+  transform: translate(calc(-50% + 160px - 50px), calc(-50% - 115px - 15px));
+}
+.todayView-BtnBox.column {
+  transform: translate(calc(-50% + 125px - 50px), calc(-50% - 150px - 15px));
+}
+
+.todayView-editBtn {
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  font-size: 13px;
+  color: white;
+  letter-spacing: 2px;
+  opacity: 0.5;
+  transition: 0.5s;
+  pointer-events: all;
+}
+.todayView-editBtn:hover {
+  opacity: 1;
+}
+
+.todayView-editBtn.editActive {
+  pointer-events: none;
+  opacity: 0;
+}
+.todayView-BtnBox .todayView-save-cancel-Box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  transition: 0.5s;
+  pointer-events: none;
+  opacity: 0;
+}
+.todayView-BtnBox .todayView-save-cancel-Box.editActive {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.todayView-BtnBox .todayView-save-cancel-Box li {
+  width: 50%;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  transition: 0.5s;
+  font-weight: 300;
+}
+.todayView-BtnBox .todayView-save-cancel-Box li:hover {
+  opacity: 1;
+}
+
+.todayView-editBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 90px;
+  height: 300px;
+  background-color: transparent;
+  color: white;
+  opacity: 0;
+  transition: 0.5s;
+  display: flex;
+}
+.todayView-editBox.editActive {
+  opacity: 1;
+}
+.todayView-editBox.center {
+  transform: translate(
+    calc(-50% + 150px + 45px),
+    calc(-50% - 140px + 150px - 30px)
+  );
+}
+.todayView-editBox.row {
+  transform: translate(
+    calc(-50% + 170px + 45px),
+    calc(-50% - 115px + 150px - 30px)
+  );
+}
+.todayView-editBox.column {
+  transform: translate(
+    calc(-50% + 135px + 45px),
+    calc(-50% - 130px + 150px - 30px)
+  );
+  height: 330px;
+}
+
+.todayView-editBox-leftBox {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+.todayView-editBox-leftBox li {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.todayView-editBox-leftBox li:hover {
+  opacity: 1;
+}
+.todayView-editBox-leftBox .todayView-editBox-leftBox-textEdit i {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.todayView-editBox-leftBox .todayView-editBox-leftBox-colorEdit div {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    purple
+  );
+  border: 1px solid white;
+}
+.todayView-editBox-leftBox .todayView-editBox-leftBox-ratioEdit ul {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.todayView-editBox-leftBox .todayView-editBox-leftBox-ratioEdit ul:hover {
+  opacity: 1;
+}
+.todayView-editBox-leftBox .todayView-editBox-leftBox-ratioEdit ul li {
+  opacity: 1;
+  transition: 0.5s;
+}
+.todayView-editBox-leftBox
+  .todayView-editBox-leftBox-ratioEdit
+  ul
+  li:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-top: 1.5px solid white;
+  border-left: 1.5px solid white;
+}
+.todayView-editBox-leftBox
+  .todayView-editBox-leftBox-ratioEdit
+  ul
+  li:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 5px;
+  border-top: 1.5px solid white;
+  border-right: 1.5px solid white;
+}
+.todayView-editBox-leftBox
+  .todayView-editBox-leftBox-ratioEdit
+  ul
+  li:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 5px;
+  height: 5px;
+  border-bottom: 1.5px solid white;
+  border-right: 1.5px solid white;
+}
+.todayView-editBox-leftBox
+  .todayView-editBox-leftBox-ratioEdit
+  ul
+  li:nth-child(4) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-bottom: 1.5px solid white;
+  border-left: 1.5px solid white;
+}
+
+.todayView-editBox-leftBox .todayView-editBox-leftBox-textEdit.text {
+  opacity: 1;
+}
+.todayView-editBox-leftBox .todayView-editBox-leftBox-imageEdit.image {
+  opacity: 1;
+}
+.todayView-editBox-leftBox .todayView-editBox-leftBox-ratioEdit.ratio {
+  opacity: 1;
+}
+.todayView-editBox-leftBox .todayView-editBox-leftBox-ratioEdit.ratio ul {
+  opacity: 1;
+}
+.todayView-editBox-leftBox .todayView-editBox-leftBox-colorEdit.color {
+  opacity: 1;
+}
+.todayView-editBox-leftBox .todayView-editBox-leftBox-brightEdit.bright {
+  opacity: 1;
+}
+.todayView-editBox-leftBox .todayView-editBox-leftBox-remove.remove {
+  opacity: 1;
+}
+
+.todayView-editBox-rightBox {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+.todayView-editBox-rightBox li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.todayView-editBox-rightBox-colorSelect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.todayView-editBox-rightBox-colorSelect button {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin: 5px 0 5px 0;
+  transition: 0.5s;
+  transform: scale(0.9);
+}
+.todayView-editBox-rightBox-colorSelect button:hover {
+  transform: scale(1);
+}
+
+.todayView-editBox-rightBox-colorSelect button:nth-child(1) {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.todayView-editBox-rightBox-colorSelect button:nth-child(2) {
+  background-color: black;
+}
+
+.todayView-editBox-rightBox-colorSelect button:nth-child(3) {
+  background-color: rgb(255, 200, 0);
+  border: 1px solid black;
+}
+
+.todayView-editBox-rightBox-ratioSelect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.todayView-editBox-rightBox-ratioSelect button {
+  border: 1px solid white;
+  margin: 8px 0 8px 0;
+  transition: 0.5s;
+  transform: scale(0.9);
+  background-color: transparent;
+}
+.todayView-editBox-rightBox-ratioSelect button:hover {
+  transform: scale(1);
+}
+
+.todayView-editBox-rightBox-ratioSelect button:nth-child(1) {
+  width: 16px;
+  height: 16px;
+}
+
+.todayView-editBox-rightBox-ratioSelect button:nth-child(2) {
+  width: 23px;
+  height: 14px;
+}
+
+.todayView-editBox-rightBox-ratioSelect button:nth-child(3) {
+  width: 14px;
+  height: 23px;
+}
+
+.todayView-editBox-rightBox-brightSelect-box {
+  position: absolute;
+  width: 50%;
+  height: 130px;
+  left: 0;
+  top: 15px;
+  transform: rotate(180deg);
+}
+
+.todayView-editBox-rightBox-brightSelect-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background-color: white;
+  opacity: 0.3;
+}
+.todayView-editBox-rightBox-brightSelect-ball {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.1s;
+}
+.todayView-editBox-rightBox-brightSelect-ball:active {
+  transform: translateX(-50%) scale(1.2);
+}
+.todayView-editBox-rightBox-brightSelect-percent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+}
+
+.todayView-editBox-rightBox-imageSelect input {
+  position: absolute;
+  opacity: 1;
+  display: none;
+}
+.todayView-editBox-rightBox-imageSelect div {
+  position: absolute;
+  opacity: 0.3;
+  transition: 0.5s;
+}
+
+.todayView-editBox-rightBox-imageSelect div:hover {
+  opacity: 1;
+}
+.todayView-editBox-rightBox-textSelect-text {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  background-color: transparent;
+  transition: 1s;
+}
+.todayView-editBox-rightBox-textSelect-text.textActive {
+  opacity: 1;
+}
+.todayView-editBox-rightBox-textSelect-text:hover {
+  opacity: 1;
+}
+
+.todayView-editBox-rightBox-removeSelect {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  background-color: transparent;
+  transition: 1s;
+}
+
+.todayView-editBox-rightBox-removeSelect div {
+  position: relative;
+  font-size: 12px;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+}
+
+.todayView-editBox-rightBox-removeSelect div:hover {
+  opacity: 1;
+}

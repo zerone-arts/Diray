@@ -1,0 +1,345 @@
+.month-container {
+  width: 100%;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.month-container.dark {
+  background-color: rgb(35, 35, 37);
+}
+
+.month-topbar {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, calc(-50% - 130px));
+  font-weight: 500;
+}
+.month-topbar-link {
+  position: absolute;
+  text-decoration: none;
+  color: rgb(16, 18, 38);
+  width: 50%;
+  height: 50%;
+}
+.month-topbar-link.dark {
+  color: white;
+}
+
+.month-topbar-monthNumBox {
+  position: absolute;
+  text-decoration: none;
+  right: -50px;
+  top: -10px;
+  width: 100px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.month-topbar-monthNumBox.dark {
+  color: white;
+}
+
+.month-topbar-monthNumBox-num {
+  position: absolute;
+  display: inline-block;
+  font-weight: 500;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  opacity: 1;
+  transition: 1s;
+  cursor: pointer;
+}
+.month-topbar-monthNumBox-num.active {
+  opacity: 0;
+}
+
+.month-topbar-monthNumBox-numList {
+  position: absolute;
+  width: 25px;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+  opacity: 0;
+  transition: 1s;
+  pointer-events: none;
+}
+.month-topbar-monthNumBox-numList.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.month-topbar-monthNumBox-numList li {
+  opacity: 1;
+  transition: 2s;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  border-radius: 3px;
+}
+.month-topbar-monthNumBox-numList li:hover {
+  opacity: 1;
+  transition: 0.5s;
+  background-color: rgba(39, 66, 100, 0.5);
+}
+.month-topbar-monthNumBox-numList.dark li:hover {
+  background-color: rgba(181, 125, 36, 0.5);
+}
+
+.month-topbar-text {
+  position: absolute;
+  text-decoration: none;
+  bottom: 5px;
+  width: 100%;
+  height: 50%;
+  font-size: 5px;
+  color: rgb(125, 129, 165);
+  letter-spacing: 1px;
+}
+
+.month-topbar-text.dark {
+  color: rgb(206, 143, 42);
+}
+
+.month-week {
+  position: absolute;
+  width: 210px;
+  height: 30px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, calc(-50% - 105px));
+  display: flex;
+}
+.month-week li {
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.month-week.dark li {
+  color: white;
+}
+.month-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 210px;
+  overflow-y: hidden;
+}
+.month-box .month-list-wrapper {
+  position: absolute;
+  width: 100%;
+  transition: 1s;
+}
+
+.month-box .month-list-wrapper .month-list-box {
+  position: relative;
+  width: 100%;
+  pointer-events: all;
+  /* background-color: gray; */
+}
+
+.month-box .month-list-wrapper .month-list-box .month-list-box-days {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.month-box .month-list-wrapper .month-list-box .month-list-box-days.dark {
+  color: white;
+}
+.month-box .month-list-wrapper .month-list-box .month-list-box-days p {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.month-box
+  .month-list-wrapper
+  .month-list-box
+  .month-list-box-days
+  .month-list-box-days-mark {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 3px;
+  height: 3px;
+  background-color: rgb(255, 0, 0);
+  border-radius: 50%;
+}
+
+.month-box
+  .month-list-wrapper
+  .month-list-box
+  .month-list-box-days
+  .month-list-box-days-day {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  transition: 2s;
+  border-radius: 2px;
+  background-color: rgba(39, 66, 100, 0);
+}
+.month-box
+  .month-list-wrapper
+  .month-list-box
+  .month-list-box-days
+  .month-list-box-days-day.active {
+  background-color: rgba(39, 66, 100, 0.5);
+  color: white;
+  transition: 0.5s;
+}
+
+.month-box
+  .month-list-wrapper
+  .month-list-box
+  .month-list-box-days.dark
+  .month-list-box-days-day.active {
+  background-color: rgb(206, 143, 42);
+  color: white;
+  transition: 0.5s;
+}
+.month-box
+  .month-list-wrapper
+  .month-list-box
+  .month-list-box-days
+  .month-list-box-days-day:hover {
+  background-color: rgba(39, 66, 100, 0.5);
+  transition: 0.5s;
+}
+.month-box
+  .month-list-wrapper
+  .month-list-box
+  .month-list-box-days.dark
+  .month-list-box-days-day:hover {
+  background-color: rgba(181, 125, 36, 0.5);
+  transition: 0.5s;
+}
+
+.month-leftBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(calc(-50% - 115px), -50%);
+  width: 20px;
+
+  transition: 1s;
+}
+.month-leftBox-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background-color: black;
+}
+.month-leftBox-line.dark {
+  background-color: white;
+}
+.month-leftBox-ball {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: white;
+  transition: 1s;
+}
+.month-leftBox-ball.dark {
+  background-color: black;
+}
+
+.month-leftBox-ball::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgb(27, 33, 82);
+}
+.month-leftBox-ball.dark::before {
+  background-color: white;
+}
+.month-bottomBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 210px;
+  height: 20px;
+  transition: 1s;
+}
+.month-bottomBox-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+.month-bottomBox-line.dark {
+  background-color: white;
+}
+.month-bottomBox-ball {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: white;
+  transition: 1s;
+}
+.month-bottomBox-ball.dark {
+  background-color: black;
+}
+.month-bottomBox-ball::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgb(27, 33, 82);
+}
+.month-bottomBox-ball.dark::before {
+  background-color: white;
+}
