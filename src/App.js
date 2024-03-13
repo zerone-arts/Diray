@@ -71,6 +71,7 @@ function App() {
       <Routes>
         <Route
           path="/"
+          exact
           element={
             <Main
               count={count}
