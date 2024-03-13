@@ -11,7 +11,6 @@ function Month({ count, theme, userData }) {
   const dayRef = useRef(null);
   let monthBox = new Array(42).fill("");
   let monthNumList = new Array(12).fill("");
-
   const [slideBoxTransition, setSlideBoxTransition] = useState("1s");
   const [mouseActive, setMouseACtive] = useState(false);
   const [mouseY, setMouseY] = useState(null);
