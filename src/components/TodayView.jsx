@@ -43,6 +43,10 @@ function TodayView({
   const textBoxMoveRef = useRef(null);
   const ratioRef = useRef(null);
 
+  const [ratioBoxLeft, setRatioBoxLeft] = useState(
+    ratioRef.current?.getBoundingClientRect().left
+  );
+
   const squareList = ["center", "row", "column"];
 
   const onChangeHandle = (e) => {
@@ -65,13 +69,13 @@ function TodayView({
   const textMoveHandle = (e) => {
     if (textMoveActive) {
       if (ratio === "center") {
-        setTextBoxX(e.clientX - 200 + textWidth / 2);
+        setTextBoxX(e.clientX - ratioBoxLeft);
         setTextBoxY(e.clientY - 200);
       } else if (ratio === "row") {
-        setTextBoxX(e.clientX - 175 + textWidth / 2);
+        setTextBoxX(e.clientX - ratioBoxLeft);
         setTextBoxY(e.clientY - 225);
       } else if (ratio === "column") {
-        setTextBoxX(e.clientX - 210 + textWidth / 2);
+        setTextBoxX(e.clientX - ratioBoxLeft);
         setTextBoxY(e.clientY - 190);
       }
     }
@@ -102,8 +106,6 @@ function TodayView({
     allList[abbr].splice(prevObj, 1);
     setMonthAllList(allList);
   };
-
-  console.log(text);
 
   const saveHandle = async () => {
     setEdit("");
@@ -207,6 +209,10 @@ function TodayView({
   }, []);
 
   useEffect(() => {
+    setRatioBoxLeft(ratioRef.current?.getBoundingClientRect().left);
+  }, [ratio]);
+
+  useEffect(() => {
     getData();
   }, [selectDay]);
 
@@ -216,6 +222,9 @@ function TodayView({
 
   return (
     <div className={`todayView-container ${todayActive}`}>
+      <div className={`ratioRefClass ${ratio}`}>
+        <div ref={ratioRef}></div>
+      </div>
       <span className="todayView-textWdith" ref={textWidthRef}>
         {text}
       </span>
@@ -257,7 +266,6 @@ function TodayView({
                 className="squre-Box-textBox"
                 onMouseMove={(e) => textMoveHandle(e)}
                 onMouseUp={() => setTextMoveActive(false)}
-                ref={ratioRef}
               >
                 <div
                   className={`squre-Box-textBox-textWrapper ${editSelect}`}

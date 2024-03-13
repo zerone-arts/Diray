@@ -11,6 +11,34 @@
   pointer-events: none;
   font-family: "Poppins", sans-serif;
 }
+
+.ratioRefClass {
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+}
+.ratioRefClass div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid red;
+}
+
+.ratioRefClass.center div {
+  width: 280px;
+  height: 280px;
+}
+
+.ratioRefClass.row div {
+  width: 320px;
+  height: 230px;
+}
+
+.ratioRefClass.column div {
+  width: 250px;
+  height: 300px;
+}
 .todayView-container.active {
   background-color: rgba(0, 0, 0, 0.8);
   pointer-events: all;
