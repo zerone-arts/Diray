@@ -17,7 +17,6 @@ import { db } from "./firebase";
 
 function App() {
   let date = new Date();
-
   const [login, setLogin] = useState(false);
   const [count, setCount] = useState(date.getMonth() + 1);
   const [editActive, setEditActive] = useState("");
