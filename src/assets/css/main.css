@@ -11,7 +11,7 @@
 }
 
 .main-container.dark {
-  background-color: rgb(35, 35, 37);
+  background-color: rgb(48, 48, 48);
 }
 .main-container.active {
   background-color: rgb(243, 243, 243);
@@ -174,7 +174,7 @@
 .main-slide-month.dark {
   filter: brightness(80%);
   box-shadow: inset 5px 0px 5px rgba(99, 92, 92, 0.15),
-    0px 5px 20px 5px rgba(255, 255, 255, 0.1);
+    0px 5px 10px 5px rgba(0, 0, 0, 0.1);
 }
 .main-slide-month::before {
   position: absolute;

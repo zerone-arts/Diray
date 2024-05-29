@@ -14,19 +14,18 @@ function ColorEdit({
   let colorBox = [
     {
       num: 10,
-      hex: "#d19680",
-      color: "209,150,128",
+      hex: "#818181",
+      color: "129,129,129",
     },
     {
       num: 11,
-      hex: "#3e7e90",
-      color: "62,126,144",
+      hex: "#faa1a8",
+      color: "250,161,168",
     },
-
     {
       num: 12,
-      hex: "#a76ac5",
-      color: "167,106,197",
+      hex: "#198077",
+      color: "25,128,119",
     },
     {
       num: 1,
@@ -35,59 +34,58 @@ function ColorEdit({
     },
     {
       num: 2,
-      hex: "#ffc5b3",
-      color: "255,197,179",
+      hex: "#3a505e",
+      color: "58,80,94",
     },
     {
       num: 3,
-      hex: "#faa1a8",
-      color: "250,161,168",
+      hex: "#534776",
+      color: "83,71,118",
     },
     {
       num: 4,
-      hex: "#87b16e",
-      color: "135,177,110",
+      hex: "#818181",
+      color: "129,129,129",
     },
     {
       num: 5,
-      hex: "#ffd33b",
-      color: "255,211,59",
+      hex: "#faa1a8",
+      color: "250,161,168",
     },
     {
       num: 6,
-      hex: "#54cec1",
-      color: "84,206,193",
+      hex: "#198077",
+      color: "25,128,119",
     },
     {
       num: 7,
-      hex: "#24add3",
-      color: "36,173,211",
+      hex: "#ffffff",
+      color: "255,255,255",
     },
     {
       num: 8,
-      hex: "#ce5458",
-      color: "206,84,88",
+      hex: "#3a505e",
+      color: "58,80,94",
     },
     {
       num: 9,
-      hex: "#da7752",
-      color: "218,119,82",
+      hex: "#534776",
+      color: "83,71,118",
     },
     {
       num: 10,
-      hex: "#d19680",
-      color: "209,150,128",
+      hex: "#818181",
+      color: "129,129,129",
     },
     {
       num: 11,
-      hex: "#3e7e90",
-      color: "62,126,144",
+      hex: "#faa1a8",
+      color: "250,161,168",
     },
-
     {
       num: 12,
-      hex: "#a76ac5",
-      color: "167,106,197",
+      hex: "#198077",
+      color: "25,128,119",
     },
     {
       num: 1,
@@ -96,13 +94,13 @@ function ColorEdit({
     },
     {
       num: 2,
-      hex: "#ffc5b3",
-      color: "255,197,179",
+      hex: "#3a505e",
+      color: "58,80,94",
     },
     {
       num: 3,
-      hex: "#faa1a8",
-      color: "250,161,168",
+      hex: "#534776",
+      color: "83,71,118",
     },
   ];
 
