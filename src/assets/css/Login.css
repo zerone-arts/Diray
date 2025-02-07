@@ -64,9 +64,11 @@
   display: inline-block;
   position: absolute;
   right: 0;
-  width: 65px;
+  width: 100px;
   font-size: 9px;
   text-align: right;
+  color: gray;
+  padding-top: 3px;
 }
 
 .login-loginBox-inputBox {

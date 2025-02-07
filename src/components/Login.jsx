@@ -180,7 +180,9 @@ function Login({ setLogin, getUidHandle }) {
             ></div>
             <div className="login-loginBox-designBox-colorBox-hex">#18383f</div>
             <p className="login-loginBox-designBox-colorBox-text">
-              Lorem ipsum dolor sit amet.
+              a deep, serene,
+              <br />
+              and mysterious blue.
             </p>
           </div>
           <div className="login-loginBox-designBox-color2Box">
@@ -190,7 +192,7 @@ function Login({ setLogin, getUidHandle }) {
             ></div>
             <div className="login-loginBox-designBox-colorBox-hex">#aebdc0</div>
             <p className="login-loginBox-designBox-colorBox-text">
-              Lorem ipsum dolor sit amet.
+              a soft and <br /> elegant misty blue.
             </p>
           </div>
         </div>

@@ -2,7 +2,7 @@
   "name": "diary",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zerone-arts.github.io/diary",
+  "homepage": "https://zerone-oneword.vercel.app",
   "dependencies": {
     "@react-oauth/google": "^0.12.1",
     "@testing-library/jest-dom": "^5.17.0",

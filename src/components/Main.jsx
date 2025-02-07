@@ -95,6 +95,7 @@ function Main({
   };
 
   const mouseDownHandle = (e) => {
+    e.preventDefault();
     setSlideBoxTransition("1s");
     setMouseACtive(true);
     setMouseX(e.pageX);
