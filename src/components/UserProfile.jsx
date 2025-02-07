@@ -15,6 +15,8 @@ function UserProfile({ setEditActive, setLogin, theme, setTheme, userData }) {
   const [menuTop, setMenuTop] = useState(0);
   const navigate = useNavigate();
 
+  const resizeHandle = () => {};
+
   const themeHandle = () => {
     theme === "" ? setTheme("dark") : setTheme("");
   };
