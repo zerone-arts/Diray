@@ -24,6 +24,8 @@ function TodayView({
   const [textMoveActive, setTextMoveActive] = useState(false);
   const [textBoxX, setTextBoxX] = useState(null);
   const [textBoxY, setTextBoxY] = useState(null);
+  const [offsetY, setOffsetY] = useState(0);
+  const [offsetX, setOffsetX] = useState(0);
 
   const [dayEditSaveList, setDayEditSaveList] = useState({
     day: "",
@@ -66,19 +68,26 @@ function TodayView({
     });
   };
 
+  const textMoveStart = (e) => {
+    setTextMoveActive(true);
+
+    setOffsetY(e.clientY - textBoxY);
+    setOffsetX(e.clientX - textBoxX);
+  };
+
   const textMoveHandle = (e) => {
-    if (textMoveActive) {
-      if (ratio === "center") {
-        setTextBoxX(e.clientX - ratioBoxLeft);
-        setTextBoxY(e.clientY - 200);
-      } else if (ratio === "row") {
-        setTextBoxX(e.clientX - ratioBoxLeft);
-        setTextBoxY(e.clientY - 225);
-      } else if (ratio === "column") {
-        setTextBoxX(e.clientX - ratioBoxLeft);
-        setTextBoxY(e.clientY - 190);
-      }
-    }
+    if (!textMoveActive) return;
+
+    const parentBox = document.querySelector(".square-Box"); // 부모 요소 선택
+    if (!parentBox) return;
+
+    const parentRect = parentBox.getBoundingClientRect(); // 부모 요소 위치 가져오기
+
+    const offsetX = e.clientX - parentRect.left; // 부모 기준 X 좌표
+    const offsetY = e.clientY - parentRect.top; // 부모 기준 Y 좌표
+
+    setTextBoxX(offsetX);
+    setTextBoxY(offsetY);
   };
 
   const todayActiveHandle = () => {
@@ -221,7 +230,10 @@ function TodayView({
   }, [userData]);
 
   return (
-    <div className={`todayView-container ${todayActive}`}>
+    <div
+      className={`todayView-container ${todayActive}`}
+      onClick={todayActiveHandle}
+    >
       <div className={`ratioRefClass ${ratio}`}>
         <div ref={ratioRef}></div>
       </div>
@@ -234,10 +246,10 @@ function TodayView({
             <div
               key={idx}
               className={`square-Box ${item}`}
-              onClick={todayActiveHandle}
               style={
                 ratio === item ? { display: "block" } : { display: "none" }
               }
+              onClick={(e) => e.stopPropagation()}
             >
               {imgSrc === "" ? (
                 <div
@@ -297,7 +309,8 @@ function TodayView({
                           ? { color: color, opacity: 1 }
                           : { color: color, opacity: 0.5 }
                       }
-                      onMouseDown={() => setTextMoveActive(true)}
+                      onMouseDown={textMoveStart}
+                      onMouseUp={() => setTextMoveActive(false)}
                     ></ion-icon>
                   </div>
                 </div>
@@ -308,8 +321,9 @@ function TodayView({
         <div className={`todayView-BtnBox ${ratio} ${edit}`}>
           <button
             className={`todayView-editBtn ${edit}`}
-            onClick={() => {
+            onClick={(e) => {
               edit === "" ? setEdit("editActive") : setEdit("");
+              e.stopPropagation();
             }}
           >
             edit

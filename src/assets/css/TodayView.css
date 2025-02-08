@@ -47,8 +47,8 @@
 
 .todayView-wrapper {
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 470px;
+  height: 330px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scale(0);
@@ -169,6 +169,7 @@
   border: 1px solid red;
   pointer-events: none;
   width: 100%;
+  padding: 10px;
 }
 
 .todayView-BtnBox {
@@ -232,6 +233,7 @@
   transition: 0.5s;
   pointer-events: none;
   opacity: 0;
+  cursor: pointer;
 }
 .todayView-BtnBox .todayView-save-cancel-Box.editActive {
   opacity: 1;

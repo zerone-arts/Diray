@@ -2,6 +2,7 @@
   width: 100%;
   height: 100vh;
   font-family: "Poppins", sans-serif;
+  cursor: auto;
 }
 
 .month-container.dark {
@@ -209,6 +210,7 @@
   transition: 2s;
   border-radius: 2px;
   background-color: rgba(39, 66, 100, 0);
+  cursor: default;
 }
 .month-box
   .month-list-wrapper
